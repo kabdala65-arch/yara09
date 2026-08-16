@@ -1,0 +1,39 @@
+.promise-section {
+  padding: 100px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  text-align: center;
+}
+
+.promise-block,
+.poem-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.promise-section .section-tag {
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.promise-text {
+  font-size: clamp(18px, 2.4vw, 23px);
+  line-height: 2.1;
+  color: #fde2ed;
+  font-weight: 300;
+}
+
+.poem-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(19px, 2.6vw, 26px);
+  line-height: 2.1;
+  color: #fce7f3;
+  font-weight: 400;
+  font-style: italic;
+}

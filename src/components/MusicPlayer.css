@@ -1,0 +1,87 @@
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 420px;
+  margin: 0 auto;
+  background: rgba(20, 20, 35, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 50;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.play-disc {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ec4899, #a855f7);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.4);
+}
+
+.play-disc:hover {
+  transform: scale(1.08);
+}
+
+.play-disc.playing {
+  animation: breathe 2s ease-in-out infinite;
+}
+
+.player-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.player-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.song-title {
+  color: #fde2ed;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.song-heart {
+  color: #ec4899;
+  filter: drop-shadow(0 0 4px rgba(236, 72, 153, 0.8));
+}
+
+.player-status {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+}
+
+.progress-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ec4899, #f472b6);
+  border-radius: 2px;
+  transition: width 0.3s;
+  box-shadow: 0 0 8px rgba(236, 72, 153, 0.6);
+}

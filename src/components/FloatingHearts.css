@@ -1,0 +1,24 @@
+.floating-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  bottom: -10%;
+  animation: floatUp linear infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 90, 140, 0.6));
+}
+
+.spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px white, 0 0 16px #ffb3d9;
+  animation: sparkle ease-in-out infinite;
+}

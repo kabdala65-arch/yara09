@@ -1,0 +1,38 @@
+.footer {
+  padding: 80px 40px 120px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.footer-heart {
+  font-size: 48px;
+  color: #ec4899;
+  filter: drop-shadow(0 0 16px rgba(236, 72, 153, 0.8));
+  animation: pulseSoft 1.5s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+.footer-text {
+  font-size: 16px;
+  color: rgba(253, 226, 237, 0.8);
+  margin-bottom: 8px;
+}
+
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  background: linear-gradient(90deg, #fff, #f472b6, #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.15em;
+  margin: 0 8px;
+}
+
+.footer-year {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.2em;
+}

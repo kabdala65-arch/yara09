@@ -1,0 +1,469 @@
+.admin-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a14;
+  color: #fde2ed;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.admin-dashboard {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(236, 72, 153, 0.12), transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.12), transparent 45%),
+    #0a0a14;
+  color: #fde2ed;
+  font-family: 'Tajawal', sans-serif;
+  padding: 20px 16px 100px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+.admin-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 4px;
+  margin-bottom: 14px;
+  background: rgba(10, 10, 20, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.admin-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  background: linear-gradient(90deg, #f9a8d4, #d8b4fe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.admin-logout-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 192, 203, 0.25);
+  color: #fde2ed;
+  border-radius: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 13px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-logout-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 192, 203, 0.45);
+}
+
+/* ---------- Tabs ---------- */
+.admin-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 14px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 192, 203, 0.12);
+  scrollbar-width: none;
+}
+
+.admin-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.admin-tab-btn {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 192, 203, 0.15);
+  color: #fde2ed;
+  opacity: 0.75;
+  border-radius: 999px;
+  padding: 9px 16px;
+  cursor: pointer;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 13.5px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.admin-tab-btn:hover {
+  opacity: 1;
+  border-color: rgba(255, 192, 203, 0.35);
+}
+
+.admin-tab-btn.active {
+  opacity: 1;
+  color: #fff;
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.3);
+}
+
+.admin-tab-icon {
+  font-size: 14px;
+}
+
+/* ---------- Toast ---------- */
+.admin-toast {
+  position: sticky;
+  top: 64px;
+  z-index: 19;
+  background: rgba(236, 72, 153, 0.22);
+  border: 1px solid rgba(236, 72, 153, 0.45);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 14px;
+  backdrop-filter: blur(8px);
+}
+
+/* ---------- Save bar ---------- */
+.admin-save-bar {
+  position: sticky;
+  top: 64px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(20, 16, 28, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 192, 203, 0.18);
+  border-radius: 14px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+}
+
+.admin-save-status {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.admin-save-status.dirty {
+  opacity: 1;
+  color: #fbbf24;
+}
+
+.admin-save-btn {
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+  border: none;
+  border-radius: 10px;
+  padding: 9px 18px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13.5px;
+  font-family: 'Tajawal', sans-serif;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.admin-save-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.admin-save-btn:not(:disabled):active {
+  transform: scale(0.97);
+}
+
+/* ---------- Generic section card (photos / media / settings) ---------- */
+.admin-section {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 192, 203, 0.15);
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 18px;
+}
+
+.admin-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  margin-bottom: 16px;
+}
+
+.admin-upload-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13.5px;
+  margin-bottom: 16px;
+}
+
+.admin-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.admin-photo-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 192, 203, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-photo-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.admin-photo-card input {
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(255, 192, 203, 0.15);
+  color: #fde2ed;
+  padding: 8px;
+  font-size: 12px;
+  outline: none;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.admin-delete-btn {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.admin-empty {
+  opacity: 0.55;
+  font-size: 13.5px;
+}
+
+.admin-audio-preview {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.admin-current-password {
+  margin-bottom: 12px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.admin-password-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-password-form input {
+  flex: 1;
+  min-width: 180px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 192, 203, 0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #fde2ed;
+  outline: none;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.admin-password-form button {
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* ---------- Accordion (content tab) ---------- */
+.content-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.acc {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 192, 203, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.acc-open {
+  border-color: rgba(236, 72, 153, 0.35);
+}
+
+.acc-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: #fde2ed;
+  padding: 16px 18px;
+  cursor: pointer;
+  text-align: right;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.acc-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.acc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.acc-subtitle {
+  font-size: 12px;
+  opacity: 0.55;
+}
+
+.acc-chevron {
+  font-size: 18px;
+  opacity: 0.6;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.acc-open .acc-chevron {
+  transform: rotate(180deg);
+}
+
+.acc-body {
+  padding: 4px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid rgba(255, 192, 203, 0.1);
+  padding-top: 16px;
+}
+
+/* ---------- Field rows ---------- */
+.field-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 12.5px;
+  opacity: 0.65;
+}
+
+.field-hint {
+  font-size: 11px;
+  opacity: 0.4;
+  margin-top: -4px;
+}
+
+.field-input,
+.field-textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 192, 203, 0.2);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #fde2ed;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.field-input:focus,
+.field-textarea:focus {
+  border-color: #ec4899;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- List editors ---------- */
+.list-editor,
+.object-list-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.list-textarea {
+  flex: 1;
+}
+
+.list-remove-btn {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.list-add-btn,
+.object-list-editor > .list-add-btn {
+  align-self: flex-start;
+  background: rgba(236, 72, 153, 0.12);
+  border: 1px dashed rgba(236, 72, 153, 0.45);
+  color: #f9a8d4;
+  border-radius: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.object-list-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 192, 203, 0.15);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.object-list-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.object-list-index {
+  font-size: 12px;
+  opacity: 0.45;
+}
+
+@media (min-width: 640px) {
+  .admin-dashboard {
+    padding: 28px 24px 100px;
+  }
+}
